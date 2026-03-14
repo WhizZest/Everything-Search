@@ -36,7 +36,17 @@ This skill serves as a complete reference and helper for:
 
 ## 🔧 Installation
 
-### Quick Install with Windows Package Manager (Recommended)
+### Install with Skills CLI (Recommended for AI Agents)
+
+```bash
+# Install using npx skills
+npx skills add WhizZest/es-search
+
+# This will automatically install the skill to your AI agent's skills directory
+# Works with Claude Code, Cursor, GitHub Copilot, and other AI coding agents
+```
+
+### Quick Install with Windows Package Manager
 
 ```bash
 # Install Everything
