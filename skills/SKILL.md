@@ -23,8 +23,6 @@ ES is a command-line interface to Everything, a powerful file search utility for
 
 ### Check if Everything and ES are Installed
 
-Before using ES, verify that Everything and ES are installed:
-
 ```bash
 # Check Everything version
 es -get-everything-version
@@ -38,14 +36,9 @@ es -help
 
 If these commands fail, you need to install Everything and ES.
 
-### Install Everything and ES using Windows Package Manager (winget)
+### Install Everything and ES using winget
 
-**RECOMMENDED**: Use winget for easy installation on Windows 10/11.
-
-#### Check winget availability:
-```bash
-winget --version
-```
+winget is available on Windows 10/11 by default.
 
 #### Search for Everything and ES:
 ```bash
@@ -66,90 +59,37 @@ winget install voidtools.Everything
 winget install voidtools.Everything.Cli
 ```
 
-**Note**: ES depends on Everything, so installing ES will automatically install Everything if it's not already installed.
-
 #### Verify installation:
 ```bash
 es -version
 es -get-everything-version
 ```
 
-### Install using Scoop
-
-If you use Scoop package manager:
-
-```bash
-# Install Everything
-scoop install everything
-
-# ES is typically included with Everything
-# Verify installation
-es -version
-```
-
-### Install using Chocolatey
-
-If you use Chocolatey package manager:
-
-```bash
-# Install Everything
-choco install everything
-
-# ES is typically included with Everything
-# Verify installation
-es -version
-```
-
-### Manual Installation
-
-If package managers are not available, download manually:
-
-1. **Download Everything**:
-   - Visit: https://www.voidtools.com/
-   - Download the latest version
-   - Run the installer
-
-2. **Download ES (Everything CLI)**:
-   - Visit: https://github.com/voidtools/ES/releases
-   - Download the latest ES-x64.zip
-   - Extract to a directory in your PATH (e.g., `C:\Program Files\Everything\ES`)
-
-3. **Add ES to PATH** (if needed):
-   - Right-click "This PC" → Properties → Advanced system settings
-   - Environment Variables → System variables → Path → Edit
-   - Add the ES directory
-   - Restart your terminal
-
 ### Post-Installation Setup
 
 After installation:
 
-1. **Start Everything**: Launch Everything from Start menu or run `Everything.exe`
-2. **Configure Everything**:
-   - Let Everything index your files (usually quick)
-   - Configure settings as needed (File → Settings)
+1. **Start Everything**: Launch Everything from Start menu
+2. **Configure Everything**: Let Everything index your files (usually quick)
 3. **Verify ES connection**:
    ```bash
    es -help
    ```
-   If this works, ES is properly connected to Everything.
 
 ### Troubleshooting Installation
 
-#### ES command not found after installation:
-- Restart your terminal/command prompt
+#### ES command not found:
+- Restart your terminal
 - Verify ES is in your PATH: `where es`
-- Reinstall ES: `winget install voidtools.Everything.Cli --force`
+- Reinstall: `winget install voidtools.Everything.Cli --force`
 
 #### Everything not running:
-- Start Everything manually from Start menu
+- Start Everything from Start menu
 - Check if Everything is running in Task Manager
-- Configure Everything to start with Windows (Settings → General → Start Everything on system startup)
 
 #### ES cannot connect to Everything:
 - Ensure Everything is running
 - Restart Everything
-- Check Everything settings: Options → General → Allow ES to connect
 
 ## Basic Usage
 
@@ -189,13 +129,7 @@ es *.js
 ### File Type Filtering
 - `/ad`: Folders only
 - `/a-d`: Files only
-- `/a[RHSDAVNTPLCOIEUPM]`: DIR style attributes search
-  - R: Read only
-  - H: Hidden
-  - S: System
-  - D: Directory
-  - A: Archive
-  - Use `-` prefix to exclude: `/a-H` (non-hidden)
+- `/a[RHSDAVNTPLCOIEUPM]`: DIR style attributes search (see `es -help` for details)
 
 ## Sorting Options
 
@@ -212,12 +146,6 @@ es -sort extension <search-term>
 es -sort name-ascending <search-term>
 es -sort size-descending <search-term>
 ```
-
-### DIR Style Sorts
-- `/on` or `/o-n`: Sort by name (ascending/descending)
-- `/os` or `/o-s`: Sort by size (ascending/descending)
-- `/oe` or `/o-e`: Sort by extension (ascending/descending)
-- `/od` or `/o-d`: Sort by date modified (ascending/descending)
 
 ## Display Options
 
@@ -237,10 +165,7 @@ es -full-path-and-name *.txt
 - `-date-created` or `-dc`: Creation date
 - `-date-modified` or `-dm`: Modification date
 - `-date-accessed` or `-da`: Last access date
-- `-attributes`: File attributes
-- `-run-count`: Run count
-- `-date-run`: Last run date
-- `-date-recently-changed` or `-rc`: Recently changed date
+- Use `es -help` for all available columns
 
 ### Output Formats
 ```bash
@@ -248,12 +173,6 @@ es -csv *.js
 es -json *.txt
 es -tsv *.log
 es -txt *.ini
-```
-
-### Highlighting
-```bash
-es -highlight *.js
-es -highlight-color 0x0a *.js
 ```
 
 ### Date Format (IMPORTANT for JSON/CSV exports)
@@ -298,11 +217,7 @@ es -export-json results.json *.txt
 es -export-txt results.txt *.log
 es -export-tsv results.tsv *.ini
 ```
-
-### Export Options
-- `-no-header`: No column header in CSV/TSV files
-- `-no-folder-append-path-separator`: No trailing separator for folders
-- `-utf8-bom`: Add UTF-8 BOM to exported file
+Use `es -help` for additional export options.
 
 ## Statistics and Information
 
@@ -388,31 +303,14 @@ es -exit
 
 ## Common Use Cases
 
-### Find all JavaScript files in a project
-```bash
-es -n 100 -path "C:\project" -name -size -date-modified *.js
-```
-
 ### Find recently modified files
 ```bash
 es -n 50 -sort date-modified-descending *
 ```
 
-### Find large log files
-```bash
-es -n 20 -sort size-descending -size -name *.log
-```
-
 ### Export file list for backup
 ```bash
 es -export-csv backup_list.csv -path "C:\important\files" *
-```
-
-### Count files by type
-```bash
-es -get-result-count *.js
-es -get-result-count *.py
-es -get-result-count *.txt
 ```
 
 ## Troubleshooting
