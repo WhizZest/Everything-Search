@@ -1,9 +1,9 @@
 ---
-name: "es-search"
+name: "everything-search"
 description: "Provides comprehensive guidance for using ES (Everything Search) command-line tool. Invoke when user asks about file searching, needs help with es commands, or wants to search files efficiently using Everything."
 ---
 
-# ES Search Command Helper
+# Everything Search Command Helper
 
 This skill provides comprehensive guidance for using the ES (Everything Search) command-line interface tool.
 

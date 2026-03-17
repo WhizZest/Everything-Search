@@ -1,15 +1,15 @@
-# ES Search - Everything Search CLI Helper
+# Everything Search CLI Helper Skill
 
-[![GitHub stars](https://img.shields.io/github/stars/WhizZest/es-search?style=social)](https://github.com/WhizZest/es-search/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/WhizZest/es-search?style=social)](https://github.com/WhizZest/es-search/network/members)
-[![GitHub issues](https://img.shields.io/github/issues/WhizZest/es-search)](https://github.com/WhizZest/es-search/issues)
-[![GitHub license](https://img.shields.io/github/license/WhizZest/es-search)](https://github.com/WhizZest/es-search/blob/main/LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/WhizZest/Everything-Search?style=social)](https://github.com/WhizZest/Everything-Search/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/WhizZest/Everything-Search?style=social)](https://github.com/WhizZest/Everything-Search/network/members)
+[![GitHub issues](https://img.shields.io/github/issues/WhizZest/Everything-Search)](https://github.com/WhizZest/Everything-Search/issues)
+[![GitHub license](https://img.shields.io/github/license/WhizZest/Everything-Search)](https://github.com/WhizZest/Everything-Search/blob/main/LICENSE)
 
 > A comprehensive helper skill for ES (Everything Search) command-line tool on Windows - Fast, efficient file search utility with advanced filtering and sorting capabilities.
 
 ## 🚀 About
 
-**ES Search** is a specialized skill that provides comprehensive guidance for using the ES (Everything Search) command-line interface tool. Everything is a powerful file search utility for Windows that provides instant file search results through real-time indexing.
+**Everything Search** is a specialized skill that provides comprehensive guidance for using the ES (Everything Search) command-line interface tool. Everything is a powerful file search utility for Windows that provides instant file search results through real-time indexing.
 
 This skill serves as a complete reference and helper for:
 - Learning ES command-line syntax and options
@@ -40,7 +40,7 @@ This skill serves as a complete reference and helper for:
 
 ```bash
 # Install using npx skills
-npx skills add WhizZest/es-search
+npx skills add WhizZest/Everything-Search
 
 # This will automatically install the skill to your AI agent's skills directory
 # Works with Claude Code, Cursor, GitHub Copilot, and other AI coding agents
@@ -152,7 +152,7 @@ es -get-folder-size "C:\path\to\folder"
 
 ## 📚 Documentation
 
-For complete documentation, see [SKILL.md](SKILL.md) which includes:
+For complete documentation, see [skills/SKILL.md](skills/SKILL.md) which includes:
 
 - All ES command-line options
 - Pattern matching and filtering
